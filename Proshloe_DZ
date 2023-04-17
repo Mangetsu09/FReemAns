@@ -1,0 +1,93 @@
+Массивы
+1. Почему при выходе за пределы массива мы получаем «мусор», а не нули?
+#include <iostream>
+using namespace std;
+int main()
+{
+ 
+
+int arr[10]{ 1, 3, 5, 7, 9, 11, 13, 15, 17, 19 };
+
+for (int a = 0; a < 10; a++)
+{
+cout << arr[a] << '\n';
+}
+2. Создать массив из первых 10 нечётных чисел
+#include <iostream>
+using namespace std;
+int main()
+{
+int arr[10];
+int temp = 0;
+for (int i = 0; i < 10; i++)
+{
+cout << "Enter " << i << " element: ";
+cin >> arr[i];
+}
+cout << "\nResult array: ";
+for (int i = 0; i < 10; i++)
+{
+cout << arr[i] << ' ';
+}
+for (int i = 0; i < 9; i++)
+{
+for (int j = 0; j < 9 - i; j++)
+{
+if (arr[j] < arr[j + 1])
+{
+temp = arr[j];
+arr[j] = arr[j + 1];
+arr[j + 1] = temp;
+}
+}
+}
+cout << "\nSorted array: ";
+for (int i = 0; i < 10; i++)
+{
+cout << arr[i] << ' ';
+}
+cout << "\nArithmetic mean: ";
+double a = arr[0];
+for (int i = 1; i < 10; i++)
+{
+a = a + arr[i];
+}
+cout << a / 2;
+}
+3.  Создать массив из 10 чисел, найти и вывести наибольший элемент
+#include <iostream>
+using namespace std;
+int main()
+{
+int p;
+int y;
+
+cout << "Enter N: ";
+cin >> p;
+if (p <= 0) cout << "Eror! :P";
+else {
+for (int x = 1; x <= p; x++) {
+y = p % x;
+if (y == 0) cout << x << '\n';
+}
+}
+}
+4 Создать массив из 10 чисел, найти и вывести наибольший элемент
+#include <iostream>
+using namespace std;
+int main()
+{
+int adr[10];
+int temp = 0;
+for (int x = 1; x < 10; x++)
+{
+cout << "Enter " << x << " elements: ";
+cin >> adr[x];
+if (adr[x] > temp)
+{
+temp = adr[x];
+}
+}
+cout << temp << endl;
+
+}
